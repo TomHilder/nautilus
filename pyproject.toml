@@ -1,0 +1,32 @@
+# pyproject.toml
+
+[build-system]
+requires      = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nautilus"
+version = "0.0.0"
+description = "Extract spiral features from peak intensity maps."
+readme = "README.md"
+authors = [{ same = "Thomas Hilder", email = "Thomas.Hilder@monash.edu" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Topic :: Scientific/Engineering :: Physics"
+]
+keywords = ["astronomy", "astrophysics", "research", "protoplanets", "protoplanetary", "discs", "disks"]
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "scipy",
+    "sklearn",
+    "setuptools"
+]
+requires-python = ">=3.6"
+
+[project.urls]
+Homepage = "https://github.com/TomHilder/nautilus"
