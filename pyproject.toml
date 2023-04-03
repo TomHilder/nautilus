@@ -9,7 +9,7 @@ name = "nautilus"
 version = "0.0.0"
 description = "Extract spiral features from peak intensity maps."
 readme = "README.md"
-authors = [{ same = "Thomas Hilder", email = "Thomas.Hilder@monash.edu" }]
+authors = [{ name = "Thomas Hilder", email = "Thomas.Hilder@monash.edu" }]
 license = { file = "LICENSE" }
 classifiers = [
     "License :: OSI Approved :: MIT License",
