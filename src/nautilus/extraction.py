@@ -155,7 +155,7 @@ class Features():
                     data_for_extract[:,index_phi], width=beam_pix, height=0, prominence=std
                     )[0]
             )
-            
+
             # loop over all extracted peaks
             for index_rad in indices_r:
                 
@@ -176,7 +176,7 @@ class Features():
         self.phi_p = np.array(phi_p)
     
     @staticmethod
-    def get_cartesian_points(r_points, phi_points, flip_y=True, phi_offset=-90) -> None:
+    def get_cartesian_points(r_points, phi_points, flip_y=True, phi_offset=-90, radians=False) -> None:
         # flip_y and phi_offset are to account in the difference in deprojection used in the Cartesian
         # and polar deprojections in Eddy
         
@@ -185,8 +185,12 @@ class Features():
         else:
             fac =  1
     
-        x_keep =       r_points * np.cos((phi_points + phi_offset) * np.pi / 180)
-        y_keep = fac * r_points * np.sin((phi_points + phi_offset) * np.pi / 180)
+        if radians:
+            x_keep =       r_points * np.cos(phi_points + (phi_offset * np.pi / 180))
+            y_keep = fac * r_points * np.sin(phi_points + (phi_offset * np.pi / 180))
+        else:
+            x_keep =       r_points * np.cos((phi_points + phi_offset) * np.pi / 180)
+            y_keep = fac * r_points * np.sin((phi_points + phi_offset) * np.pi / 180)
         
         return x_keep, y_keep
     
